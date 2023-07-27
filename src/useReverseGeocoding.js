@@ -7,7 +7,7 @@ export default function useReverseGeocoding(lat, lon){
 
     useEffect(() => {
         fetch(
-          `http://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${toSring(apiKey)}`
+          `https://api.openweathermap.org/geo/1.0/reverse?lat=${lat}&lon=${lon}&limit=5&appid=${toSring(apiKey)}`
         ).then(res => {
             if(res.status == 200){
                 return res.json();
