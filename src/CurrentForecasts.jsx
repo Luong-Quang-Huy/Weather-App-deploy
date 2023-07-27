@@ -8,14 +8,17 @@ export default function CurrentForecasts() {
   const [time, setTime] = useState({
     hour: 0,
     miniutes: 0,
+    seconds: 0,
   });
+
   const forecastsData = useForecasts();
   const cityName = useReverseGeocoding(forecastsData.lat, forecastsData.lon);
   const offset = forecastsData.timezone_offset;
   const current = forecastsData.current;
   const temp = Math.floor(current.temp);
   const hour = time.hour;
-  const miniutes = time.miniutes;
+  const miniutes = time.miniutes.toString().padStart(2,"0");
+  const seconds = time.seconds.toString().padStart(2,"0");
   const iconLink = getIconLink(current.weather[0].icon);
   const description = current.weather[0].description;
   const feelsLike = current.feels_like;
@@ -28,15 +31,12 @@ export default function CurrentForecasts() {
     function updateTime() {
       const currentTimeInSeconds = Math.round(Date.now() / 1000);
       const now = getForeignDate(currentTimeInSeconds, offset);
-      setTime((t) => {
-        if (t.miniutes !== now.getMinutes()) {
-          return {
+      setTime(t => {
+          return ({
             hour: now.getHours(),
             miniutes: now.getMinutes(),
-          };
-        } else {
-          return t;
-        }
+            seconds: now.getSeconds(),
+          });
       });
     }
 
@@ -56,7 +56,7 @@ export default function CurrentForecasts() {
         </div>
         <div className="current__essential__now">
           <label className="current__time">
-            {`${hour}:${miniutes.toString().padStart(2, "0")}`}{" "}
+            {`${hour}:${miniutes}:${seconds}`}{" "}
             <span style={{ fontSize: "0.8rem" }}>{"(giờ địa phương)"}</span>
           </label>
           <label className="current__temp">
