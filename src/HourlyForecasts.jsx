@@ -40,19 +40,11 @@ const HourlyForecastItem = ({hourlyItemData}) => {
       const now = getForeignDate(forecastsData.current.dt, offset)
       const sunRise = getForeignDate(forecastsData.current.sunrise, offset);
       const sunSet = getForeignDate(forecastsData.current.sunset, offset);
-      const moonRise = getForeignDate(forecastsData.current.moonrise, offset);
-      const moonSet = getForeignDate(forecastsData.current.moonset, offset);
         
       if(date.getHours() == sunRise.getHours()) sun_moon_state = "Sun rise";
       if(date.getHours() == sunSet.getHours()) sun_moon_state = "Sun set";
-      if(date.getHours() == moonRise.getHours()) sun_moon_state = "Moon rise";
-      if(date.getHours() == moonSet.getHours()) sun_moon_state = "Moon set";
 
-      if(sun_moon_state){
-          time = `${date.getHours()}:${date.getMinutes()}`;
-      }else{
-          time = `${date.getHours()}:00`;
-      }
+      time = `${date.getHours()}:${date.getMinutes().toString().padStart(2, "0")}`;
 
       if(now.getHours() == date.getHours()){
         time = "Now";
