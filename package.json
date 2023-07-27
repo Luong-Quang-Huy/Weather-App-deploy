@@ -1,7 +1,7 @@
 {
   "homepage": "https://Luong-Quang-Huy.github.io/weather-app",
   "name": "weather-app",
-  "private": false,
+  "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
