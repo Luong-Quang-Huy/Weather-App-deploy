@@ -25,15 +25,14 @@ function App() {
     return (
       <div className="app">
         <ForeCastsProvider initialCordinates={cordinates}>
-          <div className='wrapper'>
+          <div className='current-search-container'>
             <CurrentForecasts />
             <SearchLocation />
           </div>
           <HourlyForecasts />
           <DailyForecasts />
-        </ForeCastsProvider>
-      </div>
-    );
+          </ForeCastsProvider>
+    </div>);
   }else{
     return <h2 className='app__alert'>Đang lấy vị trí, đợi tí...</h2>
   }

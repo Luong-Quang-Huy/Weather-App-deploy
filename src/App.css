@@ -3,6 +3,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .app__alert{
@@ -12,7 +18,6 @@
 }
 
 .hourly-container{
-  margin-left: 200px;
   max-width: 960px;
   color: white;
 }
@@ -35,7 +40,7 @@ ul{
 }
 
 .hourly-item{
-  width: 100px;
+  width: 120px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -69,7 +74,7 @@ ul{
 .hourly-item__sun-moon-state{
   font-weight: 600;
   text-align: center;
-  color: red;
+  color: orange;
 }
 
 .hourly-item__time{
@@ -82,8 +87,6 @@ ul{
 
 
 .daily-container{
-  margin-top: 2rem;
-  margin-left: 200px;
   width: fit-content;
 }
 
@@ -279,12 +282,9 @@ ul{
   align-self: flex-start;
 }
 
-.wrapper{
-  margin-left: 200px;
+.current-search-container{
   display: flex;
-  align-items: center;
   gap: 100px;
-  margin-bottom: 20px;
 }
 
 
