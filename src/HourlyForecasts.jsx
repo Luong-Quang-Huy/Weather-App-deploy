@@ -7,7 +7,7 @@ import { getForeignDate } from "./utilities";
 export default function HourlyForecasts(){
 
     const forecastsData = useForecasts();
-    const hourly24h = forecastsData ? forecastsData.hourly.slice(0,24) : [];
+    const hourly24h = forecastsData.hourly.slice(0,24);
     const hourlyElements = hourly24h.map((hourlyItemData, index) => {
         return <li 
         key={index}
@@ -41,8 +41,8 @@ const HourlyForecastItem = ({hourlyItemData}) => {
       const sunRise = getForeignDate(forecastsData.current.sunrise, offset);
       const sunSet = getForeignDate(forecastsData.current.sunset, offset);
         
-      if(date.getHours() == sunRise.getHours()) sun_moon_state = "Sun rise";
-      if(date.getHours() == sunSet.getHours()) sun_moon_state = "Sun set";
+      if(date.getHours() == sunRise.getHours()) sun_moon_state = "Mặt trời mọc";
+      if(date.getHours() == sunSet.getHours()) sun_moon_state = "Mặt trời lặn";
 
       time = `${date.getHours()}:${date.getMinutes().toString().padStart(2, "0")}`;
 

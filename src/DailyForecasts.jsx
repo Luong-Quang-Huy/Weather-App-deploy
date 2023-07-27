@@ -4,7 +4,7 @@ import { getForeignDate } from "./utilities";
 
 export default function DailyForecasts(){
     const forecastsData = useForecasts();
-    const daily = forecastsData ? forecastsData.daily : [];
+    const daily = forecastsData.daily;
     const dailyForecastsElement = daily.map((dailyItemData, index) => <li key={index}><DailyForecastsItem dailyItemData={dailyItemData}/></li>);
     return <div className="daily-container">
         <h2>Dự báo thời tiết trong {daily.length} ngày tới</h2>

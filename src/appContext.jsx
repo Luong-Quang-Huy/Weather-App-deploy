@@ -17,13 +17,18 @@ export const ForeCastsProvider = ({initialCordinates, children}) => {
   const [cordinates, dispatch] = useReducer(cordinatesReducer, initialCordinates);
   const forecastsData = useOneCallAPI_3_0(cordinates);
 
-  return (
-    <ForecastsContext.Provider value={forecastsData}>
-      <CordinatesDispatch.Provider value={dispatch}>
-        {children}
-      </CordinatesDispatch.Provider>
-    </ForecastsContext.Provider>
-  );
+  if(forecastsData){
+    return (
+      <ForecastsContext.Provider value={forecastsData}>
+        <CordinatesDispatch.Provider value={dispatch}>
+          {children}
+        </CordinatesDispatch.Provider>
+      </ForecastsContext.Provider>
+    );
+  }
+  else{
+    return <h2 className="app__alert">Đang fetch data, đợi tí...</h2>;
+  }
 }
 
 const cordinatesReducer =  (state, action) => {
