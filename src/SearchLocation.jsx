@@ -26,7 +26,7 @@ export default function SearchLocation(){
 
     const fetchCordinatesByLocation = (cityName) => {
       fetch(
-        `http://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${toSring(apiKey)}`
+        `https://api.openweathermap.org/geo/1.0/direct?q=${cityName}&limit=5&appid=${toSring(apiKey)}`
       )
         .then((res) => {
           setISFetching(false);

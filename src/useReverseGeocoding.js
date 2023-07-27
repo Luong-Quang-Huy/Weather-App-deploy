@@ -20,7 +20,6 @@ export default function useReverseGeocoding(lat, lon){
                 setCityName(city_name);
             }
         }).catch(error => console.error(error));
-        console.log("api fetch occured");
     }, [lat, lon]);
 
     return cityName;
