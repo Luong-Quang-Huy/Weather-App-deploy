@@ -34,7 +34,7 @@ function App() {
           </ForeCastsProvider>
     </div>);
   }else{
-    return <h2 className='app__alert'>Đang lấy vị trí, đợi tí...</h2>
+    return <h2 className='app__alert'>Xin hãy chia sẻ vị trí...</h2>
   }
 }
 

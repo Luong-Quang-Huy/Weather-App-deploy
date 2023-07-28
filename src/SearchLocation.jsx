@@ -15,7 +15,7 @@ export default function SearchLocation(){
     }
 
     const handleSearch = () => {
-        if(input !== ''){
+        if(input.trim() !== ''){
             setRequestStatus('Đang fetch data, lâu phết...');
             setISFetching(true);
             fetchCordinatesByLocation(input);

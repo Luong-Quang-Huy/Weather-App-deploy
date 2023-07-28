@@ -12,9 +12,16 @@
 }
 
 .app__alert{
-  margin-top: 200px;
-  color: red;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  color: green;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  background: url('../public/pexels-brett-sayles-1431822.jpg');
+  background-repeat: none;
+  background-size: cover;
 }
 
 .hourly-container{
